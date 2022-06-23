@@ -1,0 +1,26 @@
+what is function expression->
+Function Expression allows us to create an anonymous function which doesn't have any function name
+
+
+
+//normal function statement
+
+function sayHi(){
+    console.log('hi');
+}
+
+sayHi();
+
+//function expression
+
+var sayBye = function(){
+    console.log('bye');
+};
+
+sayBye();
+
+
+
+C:\Users\sumsanto\Downloads\nodejs>node function
+hi
+bye
