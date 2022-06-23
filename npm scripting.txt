@@ -1,0 +1,18 @@
+
+console.log('npm script test');
+
+
+
+C:\Users\sumsanto\Downloads\nodejs>node app.js
+
+C:\Users\sumsanto\Downloads\nodejs>node app.js
+npm script test
+
+C:\Users\sumsanto\Downloads\nodejs>npm start
+
+> npm@1.0.0 start
+> node app.js
+
+npm script test
+
+C:\Users\sumsanto\Downloads\nodejs>
