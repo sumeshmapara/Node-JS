@@ -1,0 +1,10 @@
+V8 Machine
+
+- Computer does not understand javascript 
+- A javascript engine take javascript and convert it into something it does understnd machine code.
+
+- V8 engine converts our js into machine code.
+
+-V8 is the name of the JavaScript engine that powers Google Chrome. 
+ It's the thing that takes our JavaScript and executes it while browsing with Chrome. V8 is the JavaScript engine i.e. it parses and executes JavaScript code.
+ Programming languages used: JavaScript, C++
