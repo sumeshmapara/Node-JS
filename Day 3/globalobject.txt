@@ -1,0 +1,43 @@
+We can access the global object in node using the global keyword:
+
+console.log(global);
+The global object exposes a variety of useful properties about the environment. 
+Also this is the place where functions as setImmediate and clearTimeout,setTimeout,setInterval are located.
+
+The setTimeout(cb, ms) global function is used to run callback cb after at least ms milliseconds.
+
+
+The setInterval(cb, ms) global function is used to run callback cb repeatedly after at least ms milliseconds.
+
+The clearTimeout(t) global function is used to stop a timer that was previously created with setTimeout(). Here t is the timer returned by the setTimeout() function.
+
+1)setTimeout(function(){
+    console.log('3 second have passed');
+},3000);
+
+
+cmd->
+C:\Users\sumsanto\Downloads\nodejs>node global
+3 second have passed
+
+2)var time=0;
+setInterval(function(){
+    time+=2;
+    console.log(time + 'secong have passed');
+
+},2000);
+
+cmd->
+C:\Users\sumsanto\Downloads\nodejs>node global
+2secong have passed
+4secong have passed
+6secong have passed
+8secong have passed
+10secong have passed
+12secong have passed
+14secong have passed
+16secong have passed
+18secong have passed
+20secong have passed
+22secong have passed
+24secong have passed
