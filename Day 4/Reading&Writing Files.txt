@@ -1,0 +1,32 @@
+***reading and writing files(Fs)
+
+1)How do I read and write node js files?
+->fs. writeFileSync( 'writeMe. txt' , readMe); Asynchronous method to read and write from/into a file:
+To read/write the file in an asynchronous mode in fs module we use readFile() and writeFile() methods.
+
+2)Handling Errors
+->If you want to catch errors such as the file you are trying to reach isn’t found, then you can do so like this:
+
+fs.readFile("not-found.txt", "utf-8", (err, data) => {
+    if (err) { console.log(err) }
+    console.log(data);
+})
+
+**Code->
+apps.js->
+
+var fs = require('fs');
+
+var readMe = fs.readFileSync('readMe.txt', 'utf8', function(err, data){
+fs.writeFileSync('writeMe.txt',readMe);
+});
+// console.log(readMe);
+
+readMe.txt->
+Yay, you read me!
+
+**cmd->
+
+PS C:\Users\sumsanto\Downloads\nodejs> node apps
+Yay, you read me!
+PS C:\Users\sumsanto\Downloads\nodejs> node apps
