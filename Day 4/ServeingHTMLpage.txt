@@ -1,0 +1,51 @@
+***Serveing html page
+
+How do I host a node JS HTML page?
+
+For using any module in Node JS we have to use “require” module. So fist we import the “http” module. var http=require("http");
+Creating Server And Host HTML Page Using Node. js
+var server = http.createServer(function(request, response) {
+response.writeHead(200, {
+'Content-Type': 'text/plain'
+});
+});
+
+
+**Code->index.html
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{background: skyblue; font-family:verdana; color: #fff; padding: 30px;}
+            h1{font-size:48px; text-transform: uppercase; letter-spacing: 2px; text-align: center;}
+            p{font-size: 16px; text-align: center;}
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to the most awesome website on the net</h1>
+        <p>You won't find a website better anywhere else</p>
+    </body>
+</html>
+
+*server.js
+var http = require('http');
+var fs = require('fs');
+
+
+var server = http.createServer(function(req, res){
+    console.log('request was made:'+ req.url);
+    res.writeHead(200, {'content-Type': 'text/html'});
+    var myReadStream = fs.createReadStream(__dirname + '/index.html','utf8');
+    myReadStream.pipe(res);
+    // res.end('Hey ninjas');
+});
+
+server.listen(3000, '127.0.0.1');
+console.log('yo dawgs, now listening to port 3000'); 
+
+**cmd->
+ C:\Users\sumsanto\Downloads\nodejs> node server
+yo dawgs, now listening to port 3000
+request was made:/
+request was made:/favicon.ico
