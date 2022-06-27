@@ -1,0 +1,72 @@
+***Basic of Routing
+What is Routing?
+->Routing refers to how an application's endpoints (URIs) respond to client requests.
+
+Code->
+*server.js->
+var http = require('http');
+var fs = require('fs');
+
+
+var server = http.createServer(function(req, res){
+    console.log('request was made:'+ req.url);
+    if(req.url === '/home' || req.url === '/'){
+        res.writeHead(200, {'context-Type': 'text/html'});
+        fs.createReadStream(__dirname + '/index.html').pipe(res);
+    }else if(req.url === '/contact'){
+        res.writeHead(200, {'context-Type': 'text/html'});
+        fs.createReadStream(__dirname + '/contact.html').pipe(res);
+    }
+    // res.writeHead(200, {'content-Type': 'text/html'});
+    // var myReadStream = fs.createReadStream(__dirname + '/index.html','utf8');
+    // myReadStream.pipe(res);
+    // res.end('Hey ninjas');
+});
+
+server.listen(3000, '127.0.0.1');
+console.log('yo dawgs, now listening to port 3000'); 
+
+*index.html->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{background: skyblue; font-family:verdana; color: #fff; padding: 30px;}
+            h1{font-size:48px; text-transform: uppercase; letter-spacing: 2px; text-align: center;}
+            p{font-size: 16px; text-align: center;}
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to the most awesome website on the net</h1>
+        <p>You won't find a website better anywhere else</p>
+    </body>
+</html>
+
+*contact.html->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{background: skyblue; font-family:verdana; color: #fff; padding: 30px;}
+            h1{font-size:48px; text-transform: uppercase; letter-spacing: 2px; text-align: center;}
+            p{font-size: 16px; text-align: center;}
+        </style>
+    </head>
+    <body>
+        <h1>Contact Us!</h1>
+        <p>Contact the collect cats on web right here..</p>
+    </body>
+</html>
+
+*cmd->
+ C:\Users\sumsanto\Downloads\nodejs> node server
+yo dawgs, now listening to port 3000
+request was made:/home
+request was made:/favicon.ico
+PS C:\Users\sumsanto\Downloads\nodejs> node server
+yo dawgs, now listening to port 3000
+request was made:/contact
+request was made:/favicon.ico
+request was made:/home
+request was made:/favicon.ico
+
