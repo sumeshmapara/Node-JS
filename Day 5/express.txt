@@ -1,0 +1,32 @@
+***Express
+
+->Easy and flexible routing system
+->Integrates with many templating engine
+->Contains a middleware framework
+
+**HTTP Methods
+Get-app.get('route',fn)
+post-app.post('route',fn)
+Delete-app.delete('route,fn)
+
+code->
+var express = require('express');
+
+var app = express();
+
+app.get('/', function(req, res){
+    res.send('this is the homepage');
+});
+
+app.get('/contact', function(req, res){
+    res.send('this is the contact page');
+});
+app.listen(3000);
+
+cmd->
+ C:\Users\sumsanto\Downloads\nodejs> nodemon express
+[nodemon] 2.0.18
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node express.js`
